@@ -1,4 +1,4 @@
-import { getPlacesNotVistedYesterday } from './db/database';
+import { getPlacesNotVistedYesterday } from './database';
 
 export function getRandomPlace(){
     const places = getPlacesNotVistedYesterday();
