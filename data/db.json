@@ -1,14 +1,28 @@
 {
   "places": [
     {
-      "name": "Pew Wei",
-      "lastVisited": 1547327833179
+      "name": "Pei Wei",
+      "imageUrl": "https://www.peiwei.com/-/media/sites/main/home-page/tiger-nav-logo.png?h=93&w=363&hash=3D44D4238414104754EDD0C82446026AEA2F54B0"
     },
     {
-      "name": "Pew Wei1"
+      "name": "Shane's",
+      "imageUrl": "https://shanesmedia.azureedge.net/images/logo.png"
     },
     {
-      "name": "Pew Wei2"
+      "name": "Chipotle",
+      "imageUrl": "https://drpma142ptgxf.cloudfront.net/assets/logo.svg"
+    },
+    {
+      "name": "The Habit",
+      "imageUrl": "https://www.habitburger.com/wp-content/themes/habitburger/images/logo-habit.jpg"
+    },
+    {
+      "name": "Senor Burrito",
+      "imageUrl": "http://www.senorburrito.com/images/logo.png"
+    },
+    {
+      "name": "Santo's",
+      "imageUrl": "https://www.santosbuffet.com/wp-content/uploads/2014/11/logo.png"
     }
   ]
 }

@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import * as db from './src/modules/db/database';
-
+import * as utility from './src/modules/utility';
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -43,6 +43,12 @@ app.delete('/api/places/:name', (req,res) => {
     db.removePlace(req.name)
     res.send(`${req.name} has been removed from future lunch selections`);
 });
+
+app.get('/api/random', (req,res) => {
+    const place = utility.getRandomPlace();
+
+    res.send(place);
+})
 
 app.listen(port, (err) => {
     if (err) {
