@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/api/places', (req,res) => {
-    const places = db.getPlaces();
+    const places = db.getAllPlaces();
     res.send(places);
 });
 

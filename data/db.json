@@ -14,7 +14,8 @@
     },
     {
       "name": "The Habit",
-      "imageUrl": "https://www.habitburger.com/wp-content/themes/habitburger/images/logo-habit.jpg"
+      "imageUrl": "https://www.habitburger.com/wp-content/themes/habitburger/images/logo-habit.jpg",
+      "lastVisited": 1547332417645
     },
     {
       "name": "Senor Burrito",

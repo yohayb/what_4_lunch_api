@@ -22,8 +22,14 @@ export function removePlace(place){
 }
 
 
-export function getPlaces() {
+export function getAllPlaces() {
     return db.get('places').value();
+}
+
+export function getPlacesNotVistedYesterday() {
+    return db.get('places')
+      .filter( p => p.lastVisited ? p.lastVisited < Date()-1 : true )
+      .value();
 }
 
 export function selectPlace(name) {
