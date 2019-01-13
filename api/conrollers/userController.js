@@ -1,4 +1,5 @@
 import * as db from '../modules/database';
+import * as utility from '../modules/utility';
 
 export function getRandomPlace(req, res) {
     const place = utility.getRandomPlace();

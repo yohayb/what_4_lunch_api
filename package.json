@@ -4,7 +4,11 @@
   "description": "api for what4lunch mobile app",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js --exec babel-node --",
+    "dev-run": "nodemon server.js --exec babel-node --",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build server.js && babel -d ./build/api ./api -s && cp -r data build && cp package*.json build",
+    "build": "npm run clean && npm run build-babel",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
