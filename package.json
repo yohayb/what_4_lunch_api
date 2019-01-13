@@ -2,9 +2,9 @@
   "name": "what4lunch-api",
   "version": "1.0.0",
   "description": "api for what4lunch mobile app",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "babel-node index.js",
+    "start": "nodemon server.js --exec babel-node --",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -21,6 +21,7 @@
     "babel-loader": "^8.0.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-register": "^6.26.0"
+    "babel-register": "^6.26.0",
+    "nodemon": "^1.18.9"
   }
 }

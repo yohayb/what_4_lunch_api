@@ -17,8 +17,11 @@ export function addPlace(newPlace) {
         throw "Duplicate entry";
 }
 
-export function removePlace(place){
-    db.get('places').remove({name: place}).write();
+export function removePlace(name){
+    const place = db.get('places').find({name: name}).value();
+    db.get('places').remove({name: name}).write();
+
+    return place;
 }
 
 
@@ -33,8 +36,10 @@ export function getPlacesNotVistedYesterday() {
 }
 
 export function selectPlace(name) {
-    db.get('places')
+    const place = db.get('places')
       .find({name: name})
       .assign({lastVisited: Date.now()})
       .write();
+
+      return place;
 }
