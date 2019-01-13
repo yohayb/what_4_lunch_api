@@ -1,29 +1,72 @@
 {
   "places": [
     {
-      "name": "Pei Wei",
-      "imageUrl": "https://www.peiwei.com/-/media/sites/main/home-page/tiger-nav-logo.png?h=93&w=363&hash=3D44D4238414104754EDD0C82446026AEA2F54B0"
+      "name": "Santo's",
+      "imageUrl": "https://www.santosbuffet.com/wp-content/uploads/2014/11/logo.png",
+      "address": "3400 N. Federal Hwy",
+      "city": "Boca Raton",
+      "state": "FL",
+      "zipCode": "33431"
     },
     {
       "name": "Shane's",
-      "imageUrl": "https://shanesmedia.azureedge.net/images/logo.png"
+      "imageUrl": "https://shanesmedia.azureedge.net/images/logo.png",
+      "address": "2240 NW 19th Street",
+      "city": "Boca Raton",
+      "state": "FL",
+      "zipCode": "33431"
     },
     {
-      "name": "Chipotle",
-      "imageUrl": "https://drpma142ptgxf.cloudfront.net/assets/logo.svg"
+      "name": "Senor Burrito",
+      "imageUrl": "http://www.senorburrito.com/images/logo.png",
+      "address": "513 NE 20th Stree",
+      "city": "Boca Raton",
+      "state": "FL",
+      "zipCode": "33431"
+    },
+    {
+      "name": "Pei Wei",
+      "imageUrl": "https://www.peiwei.com/-/media/sites/main/home-page/tiger-nav-logo.png?h=93&w=363&hash=3D44D4238414104754EDD0C82446026AEA2F54B0",
+      "address": "1831 S. Federal Hwy. #300",
+      "city": "Delray Beach",
+      "state": "FL",
+      "zipCode": "33483"
     },
     {
       "name": "The Habit",
       "imageUrl": "https://www.habitburger.com/wp-content/themes/habitburger/images/logo-habit.jpg",
-      "lastVisited": 1547332417645
+      "addresses": [
+        {
+          "address": "5560 N Military Trail",
+          "city": "Boca Raton",
+          "state": "FL",
+          "zipCode": "33496"
+        },
+        {
+          "address": "1831 S. Federal Hwy",
+          "city": "Delray Beach",
+          "state": "FL",
+          "zipCode": "33483"
+        }
+      ]
     },
     {
-      "name": "Senor Burrito",
-      "imageUrl": "http://www.senorburrito.com/images/logo.png"
-    },
-    {
-      "name": "Santo's",
-      "imageUrl": "https://www.santosbuffet.com/wp-content/uploads/2014/11/logo.png"
+      "name": "Chipotle",
+      "imageUrl": "https://drpma142ptgxf.cloudfront.net/assets/logo.svg",
+      "addresses": [
+        {
+          "address": "5560 N Military Trail",
+          "city": "Boca Raton",
+          "state": "FL",
+          "zipCode": "33496"
+        },
+        {
+          "address": "520 Linton Blvd Ste 101",
+          "city": "Delray Beach",
+          "state": "FL",
+          "zipCode": "33444"
+        }
+      ]
     }
   ]
 }
