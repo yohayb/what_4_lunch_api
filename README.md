@@ -9,3 +9,8 @@ An api to support the What4Lunch mobile app. It maintains a list of dining locat
 | /api/places/:name | Put | name of place | Adds date time for last visited |
 | /api/places/:name | Delete | name of place | Removes place from list |
 | /api/random   | Get | | Returns a random place from the list of stored places excluding place visted yesterday |
+
+## Service providers
+
+OpenWeatherMap.org  - user: , pwd: 
+endpoint example    - http://api.openweathermap.org/data/2.5/weather?zip=33433,us&units=imperial&APPID=
