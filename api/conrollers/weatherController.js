@@ -1,16 +1,14 @@
 import * as service from '../services/weather-provider-api';
 
 export async function getWeatherByZip(req, res) {
-    const location = req.body;
-    const weather = await service.getWeatherByZip(location.zipCode);
+    const zip = req.params.zipCode;
+    const weather = await service.getWeatherByZip(zip);
     res.json({ weather: weather });
 }
 
 export async function getWeatherByLatLon(req, res) {
-    const location = req.body;
-    let coord = {}
-    if (location.coord)
-        coord = location.coord;
+    const coord = {lat: req.params.lat, lon:req.params.lon}
+
     const weather = await service.getWeatherByZip(...coord);
     res.json({ weather: weather });
 }
