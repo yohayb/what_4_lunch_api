@@ -11,8 +11,6 @@ An api to support the What4Lunch mobile app. It maintains a list of dining locat
 | /api/random   | Get | | Returns a random place from the list of stored places excluding place visted yesterday |
 
 ## Service providers
-gmail account - whatlunch4@gmail.com, pwd: ncciLunch4
 
-OpenWeatherMap.org  - user: what4lunch, pwd: ncciLunch4
-        api Key     - 3330690bfdcdd7b75c299f67e0841c3e
-endpoint example    - http://api.openweathermap.org/data/2.5/weather?zip=33433,us&units=imperial&APPID=3330690bfdcdd7b75c299f67e0841c3e
+OpenWeatherMap.org  - user: , pwd: 
+endpoint example    - http://api.openweathermap.org/data/2.5/weather?zip=33433,us&units=imperial&APPID=
