@@ -9,8 +9,8 @@ An api to support the What4Lunch mobile app. It maintains a list of dining locat
 | /api/places/:name | Put | name of place | Adds date time for last visited |
 | /api/places/:name | Delete | name of place | Removes place from list |
 | /api/random   | Get | | Returns a random place from the list of stored places excluding place visted yesterday |
-| /api/weatherByZip | Get | { "zipCode": 33487 } | Returns weather object |
-| /api/weatherByLaton | Get | { "coord": {"lat":26.41, "lon": -80.09}} | Returns weather object
+| /api/weather/zip/:zipCode | Get | | Returns weather object |
+| /api/weather/lat/:lat/lon/:lon | Get |  | Returns weather object
 
 ## Service providers
 
