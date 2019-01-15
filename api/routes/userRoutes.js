@@ -3,6 +3,6 @@ module.exports = (app) => {
    app.route('/api/random')
         .get(user.getRandomPlace);
 
-    app.route('/api/places/:name')
-        .put(user.selectPlace);
+    app.route('/api/decisions')
+        .post(user.selectPlace);
 }

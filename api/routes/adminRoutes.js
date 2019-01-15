@@ -7,4 +7,7 @@ module.exports = (app) => {
 
     app.route('/api/places/:name')
         .delete(admin.removePlace);
+
+    app.route('/api/decisions')
+        .get(admin.getAllDecisions);
 }

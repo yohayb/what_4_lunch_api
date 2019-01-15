@@ -19,3 +19,8 @@ export function removePlace(req, res) {
     const place = db.removePlace(req.params.name)
     res.json({message:`${req.params.name} has been removed from future lunch selections`, place:place});
 }
+
+export function getAllDecisions(req, res) {
+    const decisions = db.getAllDecisions();
+    res.json(decisions);
+}

@@ -8,7 +8,7 @@ export function getRandomPlace(req, res) {
 
 
 export function selectPlace(req, res) {
-    const place = db.selectPlace(req.params.name)
-    res.json({message: `${req.params.name} has been selected for today's lunch. It will be excluded from tomorrow's selection`, place: place});
+    const decision = db.selectPlace(req.body)
+    res.json({message: `${decision.place.name} has been selected for today's lunch. `, decision: decision});
 }
 
