@@ -1,18 +1,6 @@
 {
   "places": [
     {
-      "name": "Santo's",
-      "imageUrl": "https://www.santosbuffet.com/wp-content/uploads/2014/11/logo.png",
-      "addresses": [
-        {
-          "address": "3400 N. Federal Hwy",
-          "city": "Boca Raton",
-          "state": "FL",
-          "zipCode": "33431"
-        }
-      ]
-    },
-    {
       "name": "Shane's",
       "imageUrl": "https://shanesmedia.azureedge.net/images/logo.png",
       "addresses": [
@@ -22,7 +10,8 @@
           "state": "FL",
           "zipCode": "33431"
         }
-      ]
+      ],
+      "insertDate": "2019-01-14T15:57:04.648Z"
     },
     {
       "name": "Senor Burrito",
@@ -34,7 +23,8 @@
           "state": "FL",
           "zipCode": "33431"
         }
-      ]
+      ],
+      "insertDate": "2019-01-14T15:57:04.648Z"
     },
     {
       "name": "Pei Wei",
@@ -46,7 +36,8 @@
           "state": "FL",
           "zipCode": "33483"
         }
-      ]
+      ],
+      "insertDate": "2019-01-15T15:57:04.648Z"
     },
     {
       "name": "The Habit",
@@ -64,7 +55,8 @@
           "state": "FL",
           "zipCode": "33483"
         }
-      ]
+      ],
+      "insertDate": "2019-01-14T15:57:04.648Z"
     },
     {
       "name": "Chipotle",
@@ -82,7 +74,21 @@
           "state": "FL",
           "zipCode": "33444"
         }
-      ]
+      ],
+      "insertDate": "2019-01-14T15:57:04.648Z"
+    },
+    {
+      "name": "Santo's",
+      "imageUrl": "https://www.santosbuffet.com/wp-content/uploads/2014/11/logo.png",
+      "addresses": [
+        {
+          "address": "3400 N. Federal Hwy",
+          "city": "Boca Raton",
+          "state": "FL",
+          "zipCode": "33431"
+        }
+      ],
+      "insertDate": "2019-01-15T16:03:39.761Z"
     }
   ]
 }

@@ -6,8 +6,9 @@ export function getAllPlaces(req, res) {
 }
 export function addPlace(req, res) {
     try {
-        db.addPlace(req.body);
-        res.json({message: `Added ${req.body.name} as new lunch location`, place: req.body});
+        const newPlace = {...req.body, insertDate: new Date()}
+        db.addPlace(newPlace);
+        res.json({message: `Added ${req.body.name} as new lunch location`, place: newPlace});
     }
     catch(err){
         res.json({message: err});
