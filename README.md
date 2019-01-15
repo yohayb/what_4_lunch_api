@@ -11,8 +11,7 @@ An api to support the What4Lunch mobile app. It maintains a list of dining locat
 | /api/weather/zip/:zipCode | Get | | Returns weather object |
 | /api/weather/lat/:lat/lon/:lon | Get |  | Returns weather object |
 | /api/decisions |  Get |   | Returns a list of decisions |
-{"time": "DATE","dayOfWeek": "monday","attendees": ["Mike", "Yohay", "Jeff"],"nextMeeting": 35, "weather": {}, "place": {} }
-| /api/decisions | Post | Adds a decision |
+| /api/decisions | Post | {"time": "DATE","dayOfWeek": "monday","attendees": ["Mike", "Yohay", "Jeff"],"nextMeeting": 35, "weather": {}, "place": {} } | Adds a decision |
 ## Service providers
 
 OpenWeatherMap.org  - user: , pwd: 
