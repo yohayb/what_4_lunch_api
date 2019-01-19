@@ -4,7 +4,7 @@ import adminRoutes from './api/routes/adminRoutes';
 import userRoutes from './api/routes/userRoutes';
 import weatherRoutes from './api/routes/weatherRoutes';
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,6 +13,7 @@ adminRoutes(app);
 userRoutes(app);
 weatherRoutes(app);
 
+// app.use(express.static(__dirname));
 app.use(function(req, res) {
     res.status(404).send({url: req.originalUrl + ' not found'})
   });

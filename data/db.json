@@ -166,5 +166,346 @@
       "insertDate": "2019-01-15T20:22:23.941Z"
     }
   ],
-  "decisions": []
+  "decisions": [
+    {
+      "time": "2019-01-18T11:50:50.928651",
+      "dayOfWeek": 5,
+      "attendees": [
+        "John",
+        "Jeff",
+        "Ovidio",
+        "Carlos",
+        "Faisal",
+        "Mike"
+      ],
+      "nextMeetingIn": 90,
+      "weather": {
+        "coord": {
+          "lon": -80.09,
+          "lat": 26.41
+        },
+        "weather": [
+          {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01d"
+          }
+        ],
+        "base": "stations",
+        "main": {
+          "temp": 74.08,
+          "pressure": 1022,
+          "humidity": 58,
+          "temp_min": 72.32,
+          "temp_max": 75.92
+        },
+        "visibility": 16093,
+        "wind": {
+          "speed": 4.7,
+          "deg": 280
+        },
+        "clouds": {
+          "all": 1
+        },
+        "dt": 1547828100,
+        "sys": {
+          "type": 1,
+          "id": 4735,
+          "message": 0.0246,
+          "country": "US",
+          "sunrise": 1547813366,
+          "sunset": 1547851963
+        },
+        "id": 420008718,
+        "name": "Boca Raton",
+        "cod": 200
+      },
+      "place": {
+        "name": "Shane's",
+        "imageUrl": "https://shanesmedia.azureedge.net/images/logo.png",
+        "addresses": [
+          {
+            "address": "2240 NW 19th Street",
+            "city": "Boca Raton",
+            "state": "FL",
+            "zipCode": "33431"
+          }
+        ]
+      },
+      "going": false
+    },
+    {
+      "time": "2019-01-18T11:51:01.463031",
+      "dayOfWeek": 5,
+      "attendees": [
+        "John",
+        "Jeff",
+        "Ovidio",
+        "Carlos",
+        "Faisal",
+        "Mike"
+      ],
+      "nextMeetingIn": 90,
+      "weather": {
+        "coord": {
+          "lon": -80.09,
+          "lat": 26.41
+        },
+        "weather": [
+          {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01d"
+          }
+        ],
+        "base": "stations",
+        "main": {
+          "temp": 74.08,
+          "pressure": 1022,
+          "humidity": 58,
+          "temp_min": 72.32,
+          "temp_max": 75.92
+        },
+        "visibility": 16093,
+        "wind": {
+          "speed": 4.7,
+          "deg": 280
+        },
+        "clouds": {
+          "all": 1
+        },
+        "dt": 1547828100,
+        "sys": {
+          "type": 1,
+          "id": 4735,
+          "message": 0.0246,
+          "country": "US",
+          "sunrise": 1547813366,
+          "sunset": 1547851963
+        },
+        "id": 420008718,
+        "name": "Boca Raton",
+        "cod": 200
+      },
+      "place": {
+        "name": "Rocksteady Jamaican Bistro",
+        "imageUrl": null,
+        "addresses": [
+          {
+            "address": "2399 N FEDERAL HWY",
+            "city": "Boca Raton",
+            "state": "FL",
+            "zipCode": "33431"
+          }
+        ]
+      },
+      "going": false
+    },
+    {
+      "time": "2019-01-18T11:51:07.276074",
+      "dayOfWeek": 5,
+      "attendees": [
+        "John",
+        "Jeff",
+        "Ovidio",
+        "Carlos",
+        "Faisal",
+        "Mike"
+      ],
+      "nextMeetingIn": 90,
+      "weather": {
+        "coord": {
+          "lon": -80.09,
+          "lat": 26.41
+        },
+        "weather": [
+          {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01d"
+          }
+        ],
+        "base": "stations",
+        "main": {
+          "temp": 74.08,
+          "pressure": 1022,
+          "humidity": 58,
+          "temp_min": 72.32,
+          "temp_max": 75.92
+        },
+        "visibility": 16093,
+        "wind": {
+          "speed": 4.7,
+          "deg": 280
+        },
+        "clouds": {
+          "all": 1
+        },
+        "dt": 1547828100,
+        "sys": {
+          "type": 1,
+          "id": 4735,
+          "message": 0.0246,
+          "country": "US",
+          "sunrise": 1547813366,
+          "sunset": 1547851963
+        },
+        "id": 420008718,
+        "name": "Boca Raton",
+        "cod": 200
+      },
+      "place": {
+        "name": "Rocksteady Jamaican Bistro",
+        "imageUrl": null,
+        "addresses": [
+          {
+            "address": "2399 N FEDERAL HWY",
+            "city": "Boca Raton",
+            "state": "FL",
+            "zipCode": "33431"
+          }
+        ]
+      },
+      "going": false
+    },
+    {
+      "time": "2019-01-18T11:51:49.387326",
+      "dayOfWeek": 5,
+      "attendees": [
+        "John",
+        "Jeff",
+        "Ovidio",
+        "Carlos",
+        "Faisal",
+        "Mike"
+      ],
+      "nextMeetingIn": 90,
+      "weather": {
+        "coord": {
+          "lon": -80.09,
+          "lat": 26.41
+        },
+        "weather": [
+          {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01d"
+          }
+        ],
+        "base": "stations",
+        "main": {
+          "temp": 74.08,
+          "pressure": 1022,
+          "humidity": 58,
+          "temp_min": 72.32,
+          "temp_max": 75.92
+        },
+        "visibility": 16093,
+        "wind": {
+          "speed": 4.7,
+          "deg": 280
+        },
+        "clouds": {
+          "all": 1
+        },
+        "dt": 1547828100,
+        "sys": {
+          "type": 1,
+          "id": 4735,
+          "message": 0.0246,
+          "country": "US",
+          "sunrise": 1547813366,
+          "sunset": 1547851963
+        },
+        "id": 420008718,
+        "name": "Boca Raton",
+        "cod": 200
+      },
+      "place": {
+        "name": "Punjab Indian",
+        "imageUrl": null,
+        "addresses": [
+          {
+            "address": "1801 N FEDERAL HWY",
+            "city": "Boca Raton",
+            "state": "FL",
+            "zipCode": "33431"
+          }
+        ]
+      },
+      "going": false
+    },
+    {
+      "time": "2019-01-18T11:51:56.779003",
+      "dayOfWeek": 5,
+      "attendees": [
+        "John",
+        "Jeff",
+        "Ovidio",
+        "Carlos",
+        "Faisal",
+        "Mike"
+      ],
+      "nextMeetingIn": 90,
+      "weather": {
+        "coord": {
+          "lon": -80.09,
+          "lat": 26.41
+        },
+        "weather": [
+          {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01d"
+          }
+        ],
+        "base": "stations",
+        "main": {
+          "temp": 74.08,
+          "pressure": 1022,
+          "humidity": 58,
+          "temp_min": 72.32,
+          "temp_max": 75.92
+        },
+        "visibility": 16093,
+        "wind": {
+          "speed": 4.7,
+          "deg": 280
+        },
+        "clouds": {
+          "all": 1
+        },
+        "dt": 1547828100,
+        "sys": {
+          "type": 1,
+          "id": 4735,
+          "message": 0.0246,
+          "country": "US",
+          "sunrise": 1547813366,
+          "sunset": 1547851963
+        },
+        "id": 420008718,
+        "name": "Boca Raton",
+        "cod": 200
+      },
+      "place": {
+        "name": "Whole Foods",
+        "imageUrl": "https://www.newhope.com/sites/newhope360.com/files/styles/article_featured_standard/public/uploads/2014/07/whole-foods-logowhole-foods-behance-xputf7ta.jpg?itok=aKl4PyjP",
+        "addresses": [
+          {
+            "address": "1400 Glades Rd Ste 110",
+            "city": "Boca Raton",
+            "state": "FL",
+            "zipCode": "33431"
+          }
+        ]
+      },
+      "going": true
+    }
+  ]
 }
