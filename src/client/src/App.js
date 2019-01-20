@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PlacesPage from './Places/PlacesPage';
 import NavBar from './Menu/NavBar';
 import './App.css';
@@ -8,7 +8,7 @@ import './App.css';
 class App extends Component {
 
   Home = () => <h2>Home</h2>;
-  Decisions = () => <h2>About</h2>;
+  Decisions = () => <h2>Decisions</h2>;
   render() {
     return (
       <Router>

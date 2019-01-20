@@ -13,6 +13,8 @@ import Address from './Address';
 const styles = {
     card: {
         maxWidth: 345,
+        maxHeight: 380,
+        overflowY: 'scroll'
     },
     media: {
         height: 140,
@@ -20,7 +22,7 @@ const styles = {
     },
 };
 
-const Place = ({ place, classes }) => {
+const Place = ({ place, onDeleteClick, classes }) => {
     return (
         <Card className={classes.card}>
             <CardActionArea>
@@ -37,7 +39,7 @@ const Place = ({ place, classes }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
+                <Button size="small" color="primary" onClick={e => onDeleteClick(place.name, e)}>
                     Delete
                 </Button>
             </CardActions>
@@ -47,7 +49,7 @@ const Place = ({ place, classes }) => {
 
 Place.propTypes = {
     classes: PropTypes.object.isRequired,
-    place: ProptTypes.shape({
+    place: PropTypes.shape({
         name: PropTypes.string,
         imageUrl: PropTypes.string,
         addresses: PropTypes.array

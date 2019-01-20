@@ -24,10 +24,10 @@ const Address = ({ address, classes }) => {
     return (
         <Card className={classes.card}>
             <CardContent>
-                <Typography className={classes.title} color="textSecondary" gutterBottom>
+                <Typography className={classes.title}  gutterBottom>
                     {address.address}
                 </Typography>
-                <Typography component="p">
+                <Typography component="p" color="textSecondary">
                     {address.city}, {address.state} {address.zipCode}
                 </Typography>
             </CardContent>

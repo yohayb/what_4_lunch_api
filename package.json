@@ -14,8 +14,16 @@
     "start": "node server.js",
     "test": "jest api"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yohayb/what_4_lunch_api.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yohayb/what_4_lunch_api/issues"
+  },
+  "homepage": "https://github.com/yohayb/what_4_lunch_api#readme",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.3",
