@@ -1,11 +1,13 @@
+import path from 'path';
 import express from 'express';
 import bodyParser from 'body-parser';
 import adminRoutes from './api/routes/adminRoutes';
 import userRoutes from './api/routes/userRoutes';
 import weatherRoutes from './api/routes/weatherRoutes';
-const app = express();
-const port = process.env.PORT || 5000;
 
+const port = process.env.PORT || 5000;
+const app = express();
+app.use(express.static(path.join(__dirname, 'client')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -13,10 +15,10 @@ adminRoutes(app);
 userRoutes(app);
 weatherRoutes(app);
 
-// app.use(express.static(__dirname));
-app.use(function(req, res) {
-    res.status(404).send({url: req.originalUrl + ' not found'})
-  });
+
+app.use(function (req, res) {
+    res.status(404).send({ url: req.originalUrl + ' not found' })
+});
 
 app.listen(port, (err) => {
     if (err) {
