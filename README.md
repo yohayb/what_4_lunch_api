@@ -1,5 +1,5 @@
 # What4Lunch API
-An api to support the What4Lunch mobile app. It maintains a list of dining locations and the ability to get the lists, add to the list, remove from the list and mark a location as visited.
+An api to support the What4Lunch mobile app. It maintains a list of dining locations and the ability to get the lists, add to the list, remove from the list and log a lunch decision. A Client app to administer the database is also included.
 
 ## Endpoints
 | EndPoint  | Verb  | Parameters | Description |
@@ -11,8 +11,9 @@ An api to support the What4Lunch mobile app. It maintains a list of dining locat
 | /api/weather/zip/:zipCode | Get | | Returns weather object |
 | /api/weather/lat/:lat/lon/:lon | Get |  | Returns weather object |
 | /api/decisions |  Get |   | Returns a list of decisions |
-| /api/decisions | Post | {"time": "DATE","dayOfWeek": "monday","attendees": ["Mike", "Yohay", "Jeff"],"nextMeeting": 35, "weather": {}, "place": {} } | Adds a decision |
+| /api/decisions | Post | {"time": "DATE","dayOfWeek": "monday","attendees": ["Mike", "Yohay", "Jeff"],"nextMeeting": 35, "weather": {}, "place": {} ] | Adds a decision |
 ## Service providers
 
 OpenWeatherMap.org  - user: , pwd: 
 endpoint example    - http://api.openweathermap.org/data/2.5/weather?zip=33433,us&units=imperial&APPID=
+

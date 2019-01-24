@@ -4,16 +4,28 @@
   "description": "api for what4lunch mobile app",
   "main": "server.js",
   "scripts": {
-    "dev-run": "nodemon server.js --exec babel-node --",
+    "dev-start": "concurrently --kill-others \"npm run start-server\" \"npm run start-client\" ",
+    "start-client": "npm start --prefix ./src/client",
+    "start-server": "nodemon src/server.js --exec babel-node --",
     "clean": "rm -rf build && mkdir build",
-    "build-babel": "babel -d ./build server.js && babel -d ./build/api ./api -s && cp -r data build && cp package*.json build",
-    "build": "npm run clean && npm run build-babel",
+    "build-server": "babel -d ./build ./src/server.js && babel -d ./build/api ./src/api -s && cp package*.json build",
+    "build-client": "npm run build --prefix ./src/client && cp -r ./src/client/build build/client",
+    "build": "npm run clean && npm run build-server && npm run build-client",
     "start": "node server.js",
     "test": "jest api"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yohayb/what_4_lunch_api.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yohayb/what_4_lunch_api/issues"
+  },
+  "homepage": "https://github.com/yohayb/what_4_lunch_api#readme",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "isomorphic-fetch": "^2.2.1",
@@ -22,12 +34,16 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.5",
+    "babel-eslint": "9.0.0",
+    "babel-loader": "8.0.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
+    "concurrently": "^4.1.0",
+    "eslint": "5.6.0",
     "jest": "^23.6.0",
     "nodemon": "^1.18.9"
   }
