@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Typography from '@material-ui/core/Typography';
 // import { withStyles } from '@material-ui/core/styles';
 import PlacesList from './PlacesList';
 import PlaceForm from './PlaceForm';
@@ -43,16 +44,16 @@ class PlacesPage extends Component {
             },
             body: JSON.stringify(newPlace)
         })
-        .then(response => response.json())
-        .then(obj => { 
-            if(obj.place) {
-                places.push(obj.place);
-                this.setState({ places });
-            }
-            else
-                throw Error(obj.message);
-        })
-        .catch(error => console.error(error));
+            .then(response => response.json())
+            .then(obj => {
+                if (obj.place) {
+                    places.push(obj.place);
+                    this.setState({ places });
+                }
+                else
+                    throw Error(obj.message);
+            })
+            .catch(error => console.error(error));
     }
 
     deletePlace(name, e) {
@@ -61,16 +62,16 @@ class PlacesPage extends Component {
         return fetch(`/api/places/${name}`, {
             method: "DELETE",
         })
-        .then(response => response.json())
-        .then(obj => { 
-            if(obj.place) {
-                places.splice(index,1);
-                this.setState({ places });
-            }
-            else
-                throw Error(obj.message);
-        })
-        .catch(error => console.error(error));
+            .then(response => response.json())
+            .then(obj => {
+                if (obj.place) {
+                    places.splice(index, 1);
+                    this.setState({ places });
+                }
+                else
+                    throw Error(obj.message);
+            })
+            .catch(error => console.error(error));
     }
 
     editPlace(place, e) {
@@ -88,15 +89,17 @@ class PlacesPage extends Component {
     render() {
         return (
             <div style={{ margin: "5px" }}>
-                <h2>Places</h2>
+                <Typography variant="h4" gutterBottom component="h2">
+                    Places
+                </Typography>
                 <PlaceForm
                     onSaveClick={this.addPlace}
                     open={this.state.addPlaceForm}
                     handleFormOpen={this.handleFormOpen}
                     handleFormClose={this.handleFormClose} />
-                <PlacesList 
-                places={this.state.places} 
-                onDeleteClick={this.deletePlace} />
+                <PlacesList
+                    places={this.state.places}
+                    onDeleteClick={this.deletePlace} />
             </div>
         );
     }
