@@ -35,7 +35,7 @@ const Place = ({ place, onDeleteClick, classes }) => {
                     <Typography gutterBottom variant="h5" component="h2">
                         {place.name}
                     </Typography>
-                    {place.addresses.map(a => <Address address={a} />)}
+                    {place.addresses.map((a, i) => <Address key={i} address={a} />)}
                 </CardContent>
             </CardActionArea>
             <CardActions>
