@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as placesActions from '../actions/placesActions';
 import Typography from '@material-ui/core/Typography';
-// import { withStyles } from '@material-ui/core/styles';
 import PlacesList from './PlacesList';
 import PlaceForm from './PlaceForm';
 
@@ -17,9 +19,10 @@ class PlacesPage extends Component {
         addPlaceForm: false
     }
     componentDidMount() {
-        this.getPlaces()
-            .then(res => this.setState({ places: res }))
-            .catch(err => console.log(err));
+        this.props.placesActions.fetchPlaces();
+        // this.getPlaces()
+        //     .then(res => this.setState({ places: res }))
+        //     .catch(err => console.log(err));
     }
 
     getPlaces = async () => {
@@ -105,4 +108,16 @@ class PlacesPage extends Component {
     }
 }
 
-export default PlacesPage;
+const mapStateToProps = (state) => {
+    return {
+        places: state.places
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        placesActions: bindActionCreators(placesActions, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlacesPage);

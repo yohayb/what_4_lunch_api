@@ -1,0 +1,2 @@
+export const FETCH_PLACES = 'FETCH_PLACES';
+export const RECEIVE_PLACES = 'RECEIVE_PLACES';
