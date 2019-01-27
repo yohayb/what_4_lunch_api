@@ -20,9 +20,7 @@ class PlacesPage extends Component {
                     Places
                 </Typography>
                 <PlaceForm />
-                <PlacesList
-                    places={this.props.places}
-                    onDeleteClick={this.deletePlace} />
+                <PlacesList places={this.props.places} />
             </div>
         );
     }

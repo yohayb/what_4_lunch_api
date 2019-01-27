@@ -1,9 +1,9 @@
 import React from 'react';
 import Place from './Place';
-const PlacesList = ({ places, onDeleteClick }) => {
+const PlacesList = ({ places }) => {
     return (
         <div style={{display: "flex", flexWrap:"wrap"}}>
-            {places && places.map(p => <div key={p.name} style={{margin: "5px" }}><Place onDeleteClick={onDeleteClick} place={p} /></div>)}
+            {places && places.map(p => <div key={p.name} style={{margin: "5px" }}><Place place={p} /></div>)}
         </div>
     );
 }
