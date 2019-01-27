@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -9,6 +10,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Address from './Address';
+import * as types from '../actions/actionTypes';
 
 const styles = {
     card: {
@@ -22,29 +24,32 @@ const styles = {
     },
 };
 
-const Place = ({ place, onDeleteClick, classes }) => {
-    return (
-        <Card className={classes.card}>
-            <CardActionArea>
-                <CardMedia
-                    className={classes.media}
-                    image={place.imageUrl}
-                    title={place.name}
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        {place.name}
-                    </Typography>
-                    {place.addresses.map((a, i) => <Address key={i} address={a} />)}
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary" onClick={e => onDeleteClick(place.name, e)}>
-                    Delete
+class Place extends React.Component {
+
+    render() {
+        return (
+            <Card className={this.props.classes.card}>
+                <CardActionArea>
+                    <CardMedia
+                        className={this.props.classes.media}
+                        image={this.props.place.imageUrl}
+                        title={this.props.place.name}
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {this.props.place.name}
+                        </Typography>
+                        {this.props.place.addresses.map((a, i) => <Address key={i} address={a} />)}
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                    <Button size="small" color="primary" onClick={e => this.props.deletePlace(this.props.place.name)}>
+                        Delete
                 </Button>
-            </CardActions>
-        </Card>
-    );
+                </CardActions>
+            </Card>
+        );
+    }
 }
 
 Place.propTypes = {
@@ -56,4 +61,18 @@ Place.propTypes = {
     }).isRequired
 };
 
-export default withStyles(styles)(Place);
+
+
+const mapStateToProps = (state) => {
+    return {
+
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        deletePlace: (name) => dispatch({ type: types.DELETE_PLACE_REQUEST, name })
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Place));

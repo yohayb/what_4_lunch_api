@@ -3,7 +3,7 @@ import Place from './Place';
 const PlacesList = ({ places, onDeleteClick }) => {
     return (
         <div style={{display: "flex", flexWrap:"wrap"}}>
-            {places.map(p => <div key={p.name} style={{margin: "5px" }}><Place onDeleteClick={onDeleteClick} place={p} /></div>)}
+            {places && places.map(p => <div key={p.name} style={{margin: "5px" }}><Place onDeleteClick={onDeleteClick} place={p} /></div>)}
         </div>
     );
 }

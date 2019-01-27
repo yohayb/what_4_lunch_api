@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
@@ -8,7 +9,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
+import * as types from '../actions/actionTypes';
 const styles = theme => ({
     fab: {
         margin: theme.spacing.unit,
@@ -19,6 +20,9 @@ const styles = theme => ({
 });
 
 class PlaceForm extends React.Component {
+    state ={
+        addPlaceForm: false
+    }
 
     onChange = (e) => {
         let field = {}
@@ -26,15 +30,28 @@ class PlaceForm extends React.Component {
         this.setState({ ...field })
     }
 
+    onSave = (place) => {
+        this.handleFormClose();
+        this.props.addPlace(place)
+    }
+
+    handleFormOpen = () => {
+        this.setState({ addPlaceForm: true });
+    };
+
+    handleFormClose = () => {
+        this.setState({ addPlaceForm: false });
+    };
+
     render() {
         return (
             <div>
                 <Fab color="primary" aria-label="Add" className={this.props.classes.fab}>
-                    <AddIcon onClick={this.props.handleFormOpen} />
+                    <AddIcon onClick={this.handleFormOpen} />
                 </Fab>
                 <Dialog
-                    open={this.props.open}
-                    onClose={this.props.handleFormClose}
+                    open={this.state.addPlaceForm}
+                    onClose={this.handleFormClose}
                     aria-labelledby="form-dialog-title"
                 >
                     <DialogTitle id="form-dialog-title">Add Lunch Place</DialogTitle>
@@ -93,7 +110,7 @@ class PlaceForm extends React.Component {
                         <Button onClick={this.props.handleFormClose} color="primary">
                             Cancel
                         </Button>
-                        <Button onClick={e => this.props.onSaveClick(this.state,e)} color="primary">
+                        <Button onClick={() => this.onSave(this.state)} color="primary">
                             Save
                          </Button>
                     </DialogActions>
@@ -103,4 +120,15 @@ class PlaceForm extends React.Component {
     }
 }
 
-export default withStyles(styles)(PlaceForm);
+const mapStateToProps = (state) => {
+    return {
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addPlace: (place) => dispatch({ type: types.ADD_PLACE_REQUEST, place}),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(PlaceForm));
