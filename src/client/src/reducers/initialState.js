@@ -1,3 +1,5 @@
 export default {
-    places:[]
+    places:[],
+    fetching: false,
+    error: null
 };

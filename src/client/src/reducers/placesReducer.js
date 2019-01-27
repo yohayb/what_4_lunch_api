@@ -1,18 +1,38 @@
 import initialState from './initialState';
-import { FETCH_PLACES, RECEIVE_PLACES } from '../actions/actionTypes';
+import {
+    GET_PLACES_REQUEST,
+    GET_PLACES_SUCCESS,
+    GET_PLACES_FAILURE,
+    ADD_PLACE_REQUEST,
+    ADD_PLACE_SUCCESS,
+    ADD_PLACE_FAILURE,
+    DELETE_PLACE_REQUEST,
+    DELETE_PLACE_SUCCESS,
+    DELETE_PLACE_FAILURE
+} from '../actions/actionTypes';
 
-const places = (state = initialState.places, action) => {
-    let newState;
+const placesReducer = (state = initialState, action) => {
+    console.log(`reducers state: `, action);
     switch (action.type) {
-        case FETCH_PLACES:
-            console.log('FETCH PLACES Action');
-            return action;
-        case RECEIVE_PLACES:
-            console.log('RECEIVE PLACES Action');
-            return newState;
+        case GET_PLACES_REQUEST:
+        case ADD_PLACE_REQUEST:
+        case DELETE_PLACE_REQUEST:
+            return { ...state, fetching: true, error: null };
+        case GET_PLACES_SUCCESS:
+            return { ...state, fetching: false, places: action.places };
+        case ADD_PLACE_SUCCESS:
+            const newPlaces = [...state.places];
+            newPlaces.push(action.place);
+            return { ...state, fetching: false, places: newPlaces };
+        case DELETE_PLACE_SUCCESS:
+            return { places: state.places.filter(p => p.name !== action.place.name), fetching: false, error: null };
+        case GET_PLACES_FAILURE:
+        case ADD_PLACE_FAILURE:
+        case DELETE_PLACE_FAILURE:
+            return { ...state, fetching: false, error: action.error };
         default:
             return state;
     }
 }
 
-export default places;
+export default placesReducer;
