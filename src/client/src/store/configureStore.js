@@ -1,7 +1,7 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import rootReducer from '../reducers/rootReducer';
 import createSagaMiddleWare from 'redux-saga';
-import { getPlacesWatcherSaga, addPlaceWatcherSaga, deletePlaceWatcherSaga } from '../sagas/placesSagas';
+import rootSaga from '../sagas/rootSaga';
 
 const configureStore = () => {
     const sagaMiddleWare = createSagaMiddleWare();
@@ -11,9 +11,7 @@ const configureStore = () => {
         composeEnhancer(applyMiddleware(sagaMiddleWare))
     );
 
-    sagaMiddleWare.run(getPlacesWatcherSaga);
-    sagaMiddleWare.run(addPlaceWatcherSaga);
-    sagaMiddleWare.run(deletePlaceWatcherSaga);
+    sagaMiddleWare.run(rootSaga);
     return store;
 
 }
