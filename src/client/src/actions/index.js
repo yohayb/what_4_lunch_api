@@ -1,2 +1,2 @@
-export * from './actionTypes';
+export * from './types';
 export * from './places';

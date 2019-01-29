@@ -8,7 +8,7 @@ import {
     DELETE_PLACE_REQUEST,
     DELETE_PLACE_SUCCESS,
     DELETE_PLACE_FAILURE,
-} from './actionTypes';
+} from './types';
 
 // Get places
 export const getPlaces = () => ({ type: GET_PLACES_REQUEST });
