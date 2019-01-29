@@ -1,5 +1,5 @@
 import { put, call, takeLatest } from 'redux-saga/effects';
-import * as types from '../actions/actionTypes';
+import { getPlacesSuccess, getPlacesFailed } from '../actions';
 
 function url() {
     return '/api/places';
@@ -20,7 +20,7 @@ export function* getPlacesSaga() {
     try {
         const response = yield call(getPlaces);
         const places = yield response.json();
-        yield put({ type: types.GET_PLACES_SUCCESS, places });
+        yield put(getPlacesSuccess(places));
     } catch (error) {
         yield put({ type: types.GET_PLACES_FAILURE, error });
     }
