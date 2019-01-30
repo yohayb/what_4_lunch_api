@@ -1,4 +1,4 @@
-import initialState from './initialState';
+import { placesState } from './initialState';
 import {
     GET_PLACES_REQUEST,
     GET_PLACES_SUCCESS,
@@ -9,9 +9,9 @@ import {
     DELETE_PLACE_REQUEST,
     DELETE_PLACE_SUCCESS,
     DELETE_PLACE_FAILURE
-} from '../actions/actionTypes';
+} from '../actions';
 
-const placesReducer = (state = initialState, action) => {
+const placesReducer = (state = placesState, action) => {
     console.log(`reducers state: `, action);
     switch (action.type) {
         case GET_PLACES_REQUEST:

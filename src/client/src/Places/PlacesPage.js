@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
-import * as types from '../actions/actionTypes';
+import { getPlaces } from '../actions';
 import Typography from '@material-ui/core/Typography';
 import PlacesList from './PlacesList';
 import PlaceForm from './PlaceForm';
@@ -36,7 +36,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getPlaces: () => dispatch({ type: types.GET_PLACES_REQUEST }),//bindActionCreators(placesActions, dispatch)
+        getPlaces: () => dispatch(getPlaces()),//bindActionCreators(placesActions, dispatch)
     }
 }
 

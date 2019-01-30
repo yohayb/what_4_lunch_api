@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import placesReducer from './placesReducer';
+import placesReducer from './places';
 
 
 const rootReducer = combineReducers({

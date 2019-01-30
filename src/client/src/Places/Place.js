@@ -10,7 +10,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Address from './Address';
-import * as types from '../actions/actionTypes';
+import { deletePlace } from '../actions';
 
 const styles = {
     card: {
@@ -71,7 +71,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        deletePlace: (name) => dispatch({ type: types.DELETE_PLACE_REQUEST, name })
+        deletePlace: (name) => dispatch(deletePlace(name))
     }
 }
 

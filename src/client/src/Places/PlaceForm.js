@@ -9,7 +9,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import * as types from '../actions/actionTypes';
+import { addPlace } from '../actions';
 const styles = theme => ({
     fab: {
         margin: theme.spacing.unit,
@@ -127,7 +127,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addPlace: (place) => dispatch({ type: types.ADD_PLACE_REQUEST, place}),
+        addPlace: (place) => dispatch(addPlace(place)),
     }
 }
 
