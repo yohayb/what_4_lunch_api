@@ -20,18 +20,46 @@ const styles = theme => ({
 });
 
 class PlaceForm extends React.Component {
-    state ={
-        addPlaceForm: false
+    state = {
+        addPlaceForm: false,
+        errors: { name: '', street: '', city: '', state: '', zipCode: '', imageUrl: '' },
+        isSaveDisabled: true,
     }
 
-    onChange = (e) => {
+    onRequiredTextFieldChange = (e) => {
         let field = {}
+        const { target } = e;
         field[e.target.id] = e.target.value;
-        this.setState({ ...field })
+        this.setState({ ...field }, () => this.validateRequiredField(target));
     }
 
-    onSave = (place) => {
+    onZipCodeFieldChange = (e) => {
+        let field = {}
+        const { target } = e;
+        field[e.target.id] = e.target.value;
+        this.setState({ ...field }, () => this.validateZipCode(target));
+    }
+
+    validateZipCode = (field) => {
+        if (field.value.length === 0)
+            return this.validateRequiredField(field);
+        const isValidZipCode = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(field.value);
+        if (!isValidZipCode)
+            this.setState({ errors: { ...this.state.errors, [field.id]: 'Invalid zip code.' } }, () => this.disableSaveButton());
+        else
+            this.setState({ errors: { ...this.state.errors, [field.id]: '' } }, () => this.disableSaveButton());
+    }
+
+    validateRequiredField = (field) => {
+        if (field.value.length === 0)
+            this.setState({ errors: { ...this.state.errors, [field.id]: 'Required field.' } }, () => this.disableSaveButton());
+        else
+            this.setState({ errors: { ...this.state.errors, [field.id]: '' } }, () => this.disableSaveButton());
+    }
+
+    onSave = () => {
         this.handleFormClose();
+        const place = (({ name, street, city, state, zipCode, imageUrl }) => ({ name, street, city, state, zipCode, imageUrl }))(this.state)
         this.props.addPlace(place)
     }
 
@@ -42,6 +70,16 @@ class PlaceForm extends React.Component {
     handleFormClose = () => {
         this.setState({ addPlaceForm: false });
     };
+
+    disableSaveButton = () => {
+        const hasErrors = Object.values(this.state.errors).some(v => v.length > 0)
+        const place = (({ name, street, city, state, zipCode }) => ({ name, street, city, state, zipCode }))(this.state)
+        const hasValues = Object.values(place).every(p => p && p.length > 0);
+        if (!hasErrors && hasValues)
+            this.setState({ isSaveDisabled: false });
+        else
+            this.setState({ isSaveDisabled: true });
+    }
 
     render() {
         return (
@@ -61,56 +99,68 @@ class PlaceForm extends React.Component {
                             margin="dense"
                             id="name"
                             label="Name"
+                            helperText={this.state.errors.name}
+                            error={this.state.errors.name.length > 0}
                             fullWidth
-                            onChange={this.onChange}
+                            onChange={this.onRequiredTextFieldChange}
+                            onBlur={(e) => this.validateRequiredField(e.target)}
                         />
                         <TextField
-                            autoFocus
                             margin="dense"
                             id="street"
                             label="Street"
+                            helperText={this.state.errors.street}
+                            error={this.state.errors.street.length > 0}
                             fullWidth
-                            onChange={this.onChange}
+                            onChange={this.onRequiredTextFieldChange}
+                            onBlur={(e) => this.validateRequiredField(e.target)}
+
                         />
                         <TextField
-                            autoFocus
                             margin="dense"
                             id="city"
                             label="City"
+                            helperText={this.state.errors.city}
+                            error={this.state.errors.city.length > 0}
                             fullWidth
-                            onChange={this.onChange}
+                            onChange={this.onRequiredTextFieldChange}
+                            onBlur={(e) => this.validateRequiredField(e.target)}
+
                         />
                         <TextField
-                            autoFocus
                             margin="dense"
                             id="state"
                             label="State"
+                            helperText={this.state.errors.state}
+                            error={this.state.errors.state.length > 0}
                             fullWidth
-                            onChange={this.onChange}
+                            onBlur={(e) => this.validateRequiredField(e.target)}
+                            onChange={this.onRequiredTextFieldChange}
                         />
                         <TextField
-                            autoFocus
                             margin="dense"
                             id="zipCode"
                             label="Zip Code"
+                            helperText={this.state.errors.zipCode}
+                            error={this.state.errors.zipCode.length > 0}
                             fullWidth
-                            onChange={this.onChange}
+                            onBlur={(e) => this.validateZipCode(e.target)}
+                            onChange={this.onZipCodeFieldChange}
                         />
                         <TextField
-                            autoFocus
                             margin="dense"
                             id="imageUrl"
                             label="Image Url"
                             type="url"
                             fullWidth
-                            onChange={this.onChange}
+                            onChange={this.onRequiredTextFieldChange}
                         />
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={this.props.handleFormClose} color="primary">
+                        <Button onClick={this.handleFormClose} color="primary">
                             Cancel
                         </Button>
-                        <Button onClick={() => this.onSave(this.state)} color="primary">
+                        <Button disabled={this.state.isSaveDisabled} onClick={() => this.onSave()} color="primary">
                             Save
                          </Button>
                     </DialogActions>
