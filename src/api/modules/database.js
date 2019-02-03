@@ -18,7 +18,7 @@ export function addPlace(newPlace) {
     if (!place)
         places.push(newPlace).write();
     else
-        throw "Duplicate entry";
+        throw new Error('Duplicate entry');
 }
 
 export function removePlace(name) {

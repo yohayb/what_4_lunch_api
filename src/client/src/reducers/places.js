@@ -12,7 +12,6 @@ import {
 } from '../actions';
 
 const placesReducer = (state = placesState, action) => {
-    console.log(`reducers state: `, action);
     switch (action.type) {
         case GET_PLACES_REQUEST:
         case ADD_PLACE_REQUEST:

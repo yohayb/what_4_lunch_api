@@ -5,19 +5,20 @@ export function getAllPlaces(req, res) {
     res.json(places);
 }
 export function addPlace(req, res) {
-    try {
-        const newPlace = {...req.body, insertDate: new Date()}
+    const newPlace = { ...req.body, insertDate: new Date() }
+    try{
         db.addPlace(newPlace);
-        res.json({message: `Added ${req.body.name} as new lunch location`, place: newPlace});
+        res.send(newPlace);
+    } catch(error){
+        res.status(500).send({ place: newPlace, message: error.message })
     }
-    catch(err){
-        res.json({message: err});
-    }
+    
+    
 }
 
 export function removePlace(req, res) {
     const place = db.removePlace(req.params.name)
-    res.json({message:`${req.params.name} has been removed from future lunch selections`, place:place});
+    res.json({ message: `${req.params.name} has been removed from future lunch selections`, place: place });
 }
 
 export function getAllDecisions(req, res) {

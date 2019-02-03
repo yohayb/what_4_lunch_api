@@ -58,9 +58,8 @@ class PlaceForm extends React.Component {
     }
 
     onSave = () => {
-        this.handleFormClose();
         const place = (({ name, street, city, state, zipCode, imageUrl }) => ({ name, street, city, state, zipCode, imageUrl }))(this.state)
-        this.props.addPlace(place)
+        this.props.addPlace(place, this.handleFormClose)
     }
 
     handleFormOpen = () => {
@@ -94,6 +93,7 @@ class PlaceForm extends React.Component {
                 >
                     <DialogTitle id="form-dialog-title">Add Lunch Place</DialogTitle>
                     <DialogContent>
+                        <p style={{color: 'red'}}>{this.props.error}</p>
                         <TextField
                             autoFocus
                             margin="dense"
@@ -160,7 +160,7 @@ class PlaceForm extends React.Component {
                         <Button onClick={this.handleFormClose} color="primary">
                             Cancel
                         </Button>
-                        <Button disabled={this.state.isSaveDisabled} onClick={() => this.onSave()} color="primary">
+                        <Button disabled={this.state.isSaveDisabled} onClick={this.onSave} color="primary">
                             Save
                          </Button>
                     </DialogActions>
@@ -172,12 +172,13 @@ class PlaceForm extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
+        error: state.placesReducer.error
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addPlace: (place) => dispatch(addPlace(place)),
+        addPlace: (place, cb) => dispatch(addPlace(place, cb)),
     }
 }
 

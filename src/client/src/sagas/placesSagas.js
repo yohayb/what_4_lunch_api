@@ -1,8 +1,8 @@
 import { put, call, takeLatest } from 'redux-saga/effects';
-import { 
+import {
     GET_PLACES_REQUEST, getPlacesSuccess, getPlacesFailed,
     ADD_PLACE_REQUEST, addPlaceSuccess, addPlaceFailed,
-    DELETE_PLACE_REQUEST, deletePlaceSuccess, deletePlaceFailed,
+    DELETE_PLACE_REQUEST, deletePlaceSuccess, deletePlaceFailed, 
 } from '../actions';
 import { getPlaces, addPlace, deletePlace } from '../services/api';
 
@@ -20,9 +20,16 @@ export function* addPlaceSaga(action) {
     try {
         const response = yield call(addPlace, action.place);
         const newPlace = yield response.json();
-        yield put(addPlaceSuccess(newPlace.place));
+        if (response.status !== 200) {
+            yield put(addPlaceFailed(newPlace.message));
+        }
+        else {
+            action.cb();
+            yield put(addPlaceSuccess(newPlace));
+        }
     } catch (error) {
         yield put(addPlaceFailed(error));
+
     }
 }
 
@@ -40,6 +47,6 @@ export function placesSaga() {
     return [
         takeLatest(GET_PLACES_REQUEST, getPlacesSaga),
         takeLatest(DELETE_PLACE_REQUEST, deletePlaceSaga),
-        takeLatest(ADD_PLACE_REQUEST, addPlaceSaga),
+        takeLatest(ADD_PLACE_REQUEST, addPlaceSaga)
     ];
 }
