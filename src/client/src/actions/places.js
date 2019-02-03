@@ -16,7 +16,7 @@ export const getPlacesSuccess = places => ({ type: GET_PLACES_SUCCESS, places })
 export const getPlacesFailed = error => ({ type: GET_PLACES_FAILURE, error });
 
 // Add place
-export const addPlace = (place) => ({ type: ADD_PLACE_REQUEST, place });
+export const addPlace = (place, cb) => ({ type: ADD_PLACE_REQUEST, place, cb });
 export const addPlaceSuccess = place => ({ type: ADD_PLACE_SUCCESS, place });
 export const addPlaceFailed = error => ({ type: ADD_PLACE_FAILURE, error });
 
