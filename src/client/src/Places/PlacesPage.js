@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
 import { getPlaces } from '../actions';
 import Typography from '@material-ui/core/Typography';
 import PlacesList from './PlacesList';

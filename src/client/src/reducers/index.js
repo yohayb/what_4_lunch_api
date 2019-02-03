@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 import placesReducer from './places';
+import decisionsReducer from './decions';
 
 
 const rootReducer = combineReducers({
-   placesReducer
+   placesReducer,
+   decisionsReducer
 });
 
 export default rootReducer;

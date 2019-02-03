@@ -15,10 +15,10 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { mainListItems } from './listItems';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PlacesPage from '../Places/PlacesPage';
+import DecisionsPage from '../Decisions/DecisionsPage';
 
 const drawerWidth = 240;
 const Home = () => <h2>Home</h2>;
-const Decisions = () => <h2>Decisions</h2>;
 const styles = theme => ({
     root: {
         display: 'flex',
@@ -163,7 +163,7 @@ class Dashboard extends React.Component {
                         <div className={classes.appBarSpacer} />
                         <Typography component="div" className={classes.chartContainer}>
                             <Route path='/' exact component={Home} />
-                            <Route path='/decisions' component={Decisions} />
+                            <Route path='/decisions' component={DecisionsPage} />
                             <Route path='/places' component={PlacesPage} />
                         </Typography>
                     </main>

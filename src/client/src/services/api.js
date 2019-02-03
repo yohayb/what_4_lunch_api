@@ -1,6 +1,5 @@
-const url = () => '/api/places';
-
-export const getPlaces = () => fetch(url());
+export const getPlaces = () => fetch('/api/places');
+export const getDecisions = () => fetch('/api/decisions');
 
 export const addPlace = (place) => {
     const newPlace = {

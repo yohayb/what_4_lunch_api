@@ -3,3 +3,9 @@ export const placesState = {
     fetching: false,
     error: null
 };
+
+export const decisionsState = {
+    decisions:[],
+    fetching: false,
+    error: null
+};
