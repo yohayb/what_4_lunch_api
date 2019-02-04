@@ -1,4 +1,4 @@
-import * as weather from '../conrollers/weatherController';
+import * as weather from '../controllers/weatherController';
 module.exports = (app) => {
    app.route('/api/weather/zip/:zipCode')
         .get(weather.getWeatherByZip);

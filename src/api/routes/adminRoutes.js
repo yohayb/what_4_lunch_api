@@ -1,5 +1,5 @@
 
-import * as admin from '../conrollers/adminController';
+import * as admin from '../controllers/adminController';
 module.exports = (app) => {
     app.route('/api/places')
         .get(admin.getAllPlaces)
