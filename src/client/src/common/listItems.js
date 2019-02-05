@@ -5,6 +5,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import FastFoodIcon from '@material-ui/icons/Fastfood';
 import PollIcon from '@material-ui/icons/Poll';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+
 import {Link} from 'react-router-dom';
 
 export const mainListItems = (
@@ -26,6 +28,12 @@ export const mainListItems = (
         <PollIcon />
       </ListItemIcon>
       <ListItemText primary="Decisions" />
+    </ListItem>
+    <ListItem button component={Link} to="/people">
+      <ListItemIcon>
+        <AccountCircle />
+      </ListItemIcon>
+      <ListItemText primary="People" />
     </ListItem>
   </div>
 );

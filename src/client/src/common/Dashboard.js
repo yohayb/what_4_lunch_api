@@ -16,6 +16,7 @@ import { mainListItems } from './listItems';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PlacesPage from '../Places/PlacesPage';
 import DecisionsPage from '../Decisions/DecisionsPage';
+import PeoplePage from '../People/PeoplePage';
 
 const drawerWidth = 240;
 const Home = () => <h2>Home</h2>;
@@ -165,6 +166,7 @@ class Dashboard extends React.Component {
                             <Route path='/' exact component={Home} />
                             <Route path='/decisions' component={DecisionsPage} />
                             <Route path='/places' component={PlacesPage} />
+                            <Route path='/people' component={PeoplePage} />
                         </Typography>
                     </main>
                 </div>

@@ -9,3 +9,10 @@ export const decisionsState = {
     fetching: false,
     error: null
 };
+
+export const peopleState = {
+    people:[],
+    fetching: false,
+    error: null
+};
+
