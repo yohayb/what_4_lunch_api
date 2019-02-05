@@ -6,12 +6,15 @@ An api to support the What4Lunch mobile app. It maintains a list of dining locat
 |:--------- |:----  |:----------    |:----------- |
 | /api/places    | Get    | | Returns an array of all places |
 | /api/places    | Post | { "name": "Name of Place", "imageUrl": "http://www.whereisthisimage.com", "addresses": [{"address": "123 here st", "city": "Boca Raton", "state": "FL", "zipCode": "33431"}] } | Adds a new pace |
-| /api/places/:name | Delete | name of place | Removes place from list |
+| /api/places/:name | Delete | "name of place" | Removes place from list |
 | /api/random   | Get | | Returns a random place from the list of stored places  |
 | /api/weather/zip/:zipCode | Get | | Returns weather object |
 | /api/weather/lat/:lat/lon/:lon | Get |  | Returns weather object |
 | /api/decisions |  Get |   | Returns a list of decisions |
 | /api/decisions | Post | {"time": "DATE","dayOfWeek": "monday","attendees": ["Mike", "Yohay", "Jeff"],"nextMeeting": 35, "weather": {}, "place": {} ] | Adds a decision |
+| /api/people | Get |   | Returns a list of people |
+| /api/people | Post | { "name": "someone" }  | Adds a person |
+| /api/people/:name | Delete | "name"  | Deletes a person |
 ## Service providers
 
 OpenWeatherMap.org  - user: , pwd: 
