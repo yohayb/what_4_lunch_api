@@ -1,4 +1,15 @@
 {
+  "people": [
+    {
+      "name": "Carlos Barrios"
+    },
+    {
+      "name": "Papa Faisal"
+    },
+    {
+      "name": "Blue Hulk"
+    }
+  ],
   "places": [
     {
       "name": "Shane's",

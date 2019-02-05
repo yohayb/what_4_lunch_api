@@ -6,7 +6,6 @@ export function getRandomPlace(req, res) {
     res.json(place);
 }
 
-
 export function selectPlace(req, res) {
     const decision = db.selectPlace(req.body)
     res.json({message: `${decision.place.name} has been selected for today's lunch. `, decision: decision});

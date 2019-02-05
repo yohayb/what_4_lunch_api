@@ -4,6 +4,7 @@ export function getAllPlaces(req, res) {
     const places = db.getAllPlaces();
     res.json(places);
 }
+
 export function addPlace(req, res) {
     const newPlace = { ...req.body, insertDate: new Date() }
     try{
@@ -11,9 +12,7 @@ export function addPlace(req, res) {
         res.send(newPlace);
     } catch(error){
         res.status(500).send({ place: newPlace, message: error.message })
-    }
-    
-    
+    }   
 }
 
 export function removePlace(req, res) {

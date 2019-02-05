@@ -1,4 +1,4 @@
-import * as user from '../conrollers/userController';
+import * as user from '../controllers/userController';
 module.exports = (app) => {
    app.route('/api/random')
         .get(user.getRandomPlace);

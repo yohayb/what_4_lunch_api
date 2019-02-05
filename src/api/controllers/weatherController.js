@@ -8,7 +8,6 @@ export async function getWeatherByZip(req, res) {
 
 export async function getWeatherByLatLon(req, res) {
     const coord = {lat: req.params.lat, lon:req.params.lon}
-
     const weather = await service.getWeatherByZip(...coord);
     res.json(weather);
 }
